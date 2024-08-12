@@ -194,17 +194,18 @@ public class VendasIHM extends javax.swing.JFrame {
             VendasDAL.getVendas();
             while(!Erro.getErro())
             {
-    
-                System.out.println("cheguei");
+               System.out.println("cheguei");
                 mod1.addElement(VendasCliente.getData());
                 mod2.addElement(VendasCliente.getToneladas());
+                somat += Float.parseFloat(VendasCliente.getToneladas());
                 mod3.addElement(VendasCliente.getValor());
+                //somav += Float.parseFloat(VendasCliente.getValor());
+                
                 VendasDAL.getVendas();   
             }
-           
             
-            textBox3.setText("");
-            textBox4.setText("");
+            textBox3.setText(somat + "");
+            //textBox4.setText(somav + "");
         }else
         {
             JOptionPane.showMessageDialog(null,Erro.getMens());
